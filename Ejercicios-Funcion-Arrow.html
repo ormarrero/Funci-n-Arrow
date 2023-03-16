@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Función Arrow</title>
+</head>
+<body>
+    <script>
+
+/*
+EJERCICIO 1. Utilizando la función arrow calcular el factorial de un numero.
+*/
+document.write("************   EJERCICIO 1 ************" +'<br>');
+function factorial(...num) {
+    let fact=1;
+    for (var num; num >= 1; num--) {
+        fact= fact * num;
+    }
+    return fact;
+}
+console.log(`El Factorial de (4) es = ${factorial(4)}`);
+document.write(`El Factorial de (5) = ${factorial(5)}`+'<br>');
+document.write('<br>');
+/*
+EJERCICIO 2. Muestra los números pares del siguiente array utilizando la función arrow.
+var números = new Array[2,7,6,8,3,4,1,9];
+*/
+
+document.write("************   EJERCICIO 2 ************" +'<br>');
+
+var numeros = new Array(2,7,6,8,3,4,1,9);
+for (let i = 0; i < numeros.length; i++) {
+    if(numeros[i]%2 == 0){
+        console.log(numeros[i]);
+        document.write("Los Números Pares son: " +numeros[i]+'<br>');
+    }
+}
+/*
+function pares(...numP) {
+    for(var i = 0; i < numP.length; i++){
+//        if(numP[i]%2 != 0);
+  //      console.log(numP);
+    //}
+        return (numP[i]%2 == 0);}
+        //return numP
+}
+console.log(`Los Números Pares son = ${pares(2,7,6,8,3,4,1,9)}`);
+document.write(`Los Números Pares son = ${pares(2,7,6,8,3,4,1,9)}`+'<br>');
+document.write('<br>');
+*/
+/*
+EJERCICIO 3.Crear una función que reciba un importe y un descuento. Este será optativo.
+Mostrar por consola el importe total.
+*/
+document.write("************   EJERCICIO 3 ************" +'<br>');
+var importe = function(descuento){
+        return descuento-(descuento*0.20);
+        }
+        console.log(`Importe total = ${importe(100)}`);
+        document.write(`Importe total = ${importe(100)}`+'<br>');
+        document.write('<br>');
+/*
+EJERCICIO 4. Modificar el ejercicio anterior para que reciba también la tasa de IVA: 4,10,21. Por
+defecto será 21.
+*/
+document.write("************   EJERCICIO 4 ************" +'<br>');
+var IVA4 = function(iva4){
+        return iva4+(iva4*0.04)-(iva4*0.20);
+        }
+        console.log(`Importe total(IVA4%) = ${IVA4(100)}`);
+        document.write(`Importe total(IVA4%) = ${IVA4(100)}`+'<br>');
+        
+var IVA10 = function(iva10){
+        return iva10+(iva10*0.1)-(iva10*0.20);
+        }
+        console.log(`Importe total(IVA10%) = ${IVA10(100)}`);
+        document.write(`Importe total(IVA10%) = ${IVA10(100)}`+'<br>');
+
+var IVA21 = function(iva21){
+        return iva21+(iva21*0.21)-(iva21*0.20);
+        }
+        console.log(`Importe total(IVA21%) = ${IVA21(100)}`);
+        document.write(`Importe total(IVA21%) = ${IVA21(100)}`+'<br>');
+
+document.write('<br>');
+
+/*
+EJERCICIO 5
+Modificar el ejercicio anterior para poder pasar como argumento varios importes.
+*/
+document.write("************   EJERCICIO 5 ************" +'<br>');
+function varios(...numeros){
+            let imp, impT = 0;
+            for (let numS of numeros){
+                imp = numS+(numS*0.10)-(numS*0.20);
+                impT += imp;
+        }
+        return impT;
+    }
+        console.log(`Varios Importes: ${varios(10,100,1000)}`);
+        document.write(`Varios Importes: ${varios(10,20,30)}`+ '<br>');
+    </script>
+</body>
+</html>
